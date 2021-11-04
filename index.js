@@ -168,8 +168,8 @@ Use the getLastReview function below to do the following:
 
 
 function getLastReview(array) {
-  const last = array[array.length - 1];
-return `${last.name} gave the restaurant a ${last.rating} star review, and their feedback was: ${last.feedback}`;
+  const lastReview = array[array.length - 1];
+return `${lastReview.name} gave the restaurant a ${lastReview.rating} star review, and their feedback was: ${lastReview.feedback}`;
 } 
 console.log(getLastReview(reviews));
 
@@ -190,10 +190,17 @@ Use the getReviewsByRating function below to do the following:
   ]
 */
 
- function getReviewByRating(/* code here */) {
-    /* code here */
-  }
+ function getReviewByRating(array, rating) {
+   const reviewByRating =[];
+    for (let i=0; i < array.length; i++){
+      if(array[i].rating >= rating && array[i].rating < rating + 1 ){
+        reviewByRating.push(array[i].rating);
+      }
 
+    }
+    return reviewByRating;
+  }
+console.log(getReviewByRating(reviews,4));
   
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪💪   
 Use the getLongReviews function below to do the following:
