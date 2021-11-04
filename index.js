@@ -64,7 +64,8 @@ const burger = {
   }
 }
  console.log(burger.discount('teacher'));
-
+ console.log(burger.discount('student'));
+ console.log(burger.discount('public'));
 
 ///////////////Reviews (MVP)///////////////////
 const reviews = [
@@ -84,6 +85,15 @@ Using the reviews array above:
 */
 
 
+for(let i = 0; i< reviews.length; i++){
+  if(reviews[i].name === 'Julius' ){
+    console.log(reviews[i].feedback)
+    
+  }
+}
+
+
+
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -91,9 +101,12 @@ Reyna's feedback is missing! Use what you know to do the following: (no function
   1. Add this feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays"
   2. log the reviews array to the console to check your work
 */
+for(let i =0; i < reviews.length; i++){
+  if(reviews[i].name === 'Reyna')
+  reviews[i].feedback = 'this place is chill with really cool people, great for getting work done on weekdays';
+}
 
-
-
+console.log(reviews);
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -105,9 +118,23 @@ Write a function that creates an object with name, rating, feedback, add the new
   4. should return the resulting array
 */
 
-function addReview(/*Your Code Here */){
-  /*Your Code Here */
+function addReview(array, name, rating,feedback){
+  const newReview = {
+    name,
+    rating,
+    feedback
+  }
+  array.push(newReview)
+    return array
+  
+ 
+  
 }
+console.log(reviews,'Daniela',5,'Beautiful atmosphere and wonderful vegan options!');
+
+
+
+
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Write a function to return a review based on the index of the review in the array.
@@ -120,11 +147,11 @@ Use the getReviewByIndex function below to do the following:
 */
 
 
-function getReviewByIndex(/*Your code here*/) {
-  /*Your code here*/
+function getReviewByIndex(array,number) {
+       return `${array[number].name} gave the restaurant a ${array[number].rating} star review, and their feedback was: ${array[number].feedback}`;
 }
 
-
+console.log(getReviewByIndex(reviews,0));
   
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
